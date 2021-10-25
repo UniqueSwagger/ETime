@@ -238,14 +238,15 @@ nav .content .links {
   }
 
   /*-----------------------dropdown responsive code start-------------------*/
+  .links {
+    z-index: 2;
+  }
   .content .links ul,
   .content .links ul ul {
     position: static;
-    opacity: 1;
     visibility: visible;
     background: none;
     max-height: 0px;
-    overflow: hidden;
   }
   .content .links #show-features:checked ~ ul,
   .content .links #show-services:checked ~ ul,
@@ -887,58 +888,71 @@ main a:hover {
   }
 }
 
-/* loader styles */
-.center {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000;
+/* table styles */
+.table {
+  margin: 1em 0;
+  min-width: 300px;
 }
-.wave {
-  width: 5px;
-  height: 100px;
-  background: linear-gradient(45deg, cyan, #fff);
-  margin: 10px;
-  animation: wave 1s linear infinite;
-  border-radius: 20px;
+.table tr {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
-.wave:nth-child(2) {
-  animation-delay: 0.1s;
+.table td:first-child {
+  padding-top: 0.5em;
 }
-.wave:nth-child(3) {
-  animation-delay: 0.2s;
+.table td:last-child {
+  padding-bottom: 0.5em;
 }
-.wave:nth-child(4) {
-  animation-delay: 0.3s;
+.table td:before {
+  font-weight: bold;
+  width: 6.5em;
+  display: inline-block;
 }
-.wave:nth-child(5) {
-  animation-delay: 0.4s;
+@media (min-width: 480px) {
+  .table td:before {
+    display: none;
+  }
 }
-.wave:nth-child(6) {
-  animation-delay: 0.5s;
+.table th,
+.table td {
+  text-align: left;
 }
-.wave:nth-child(7) {
-  animation-delay: 0.6s;
-}
-.wave:nth-child(8) {
-  animation-delay: 0.7s;
-}
-.wave:nth-child(9) {
-  animation-delay: 0.8s;
-}
-.wave:nth-child(10) {
-  animation-delay: 0.9s;
+@media (min-width: 480px) {
+  .table th,
+  .table td {
+    display: table-cell;
+    padding: 0.25em 0.5em;
+  }
+  .table th:first-child,
+  .table td:first-child {
+    padding-left: 0;
+  }
+  .table th:last-child,
+  .table td:last-child {
+    padding-right: 0;
+  }
 }
 
-@keyframes wave {
-  0% {
-    transform: scale(0);
+.table {
+  width: 100%;
+  background: #34495e;
+  color: #fff;
+  border-radius: 0.4em;
+}
+.table tr {
+  border-color: #46637f;
+}
+.table th,
+.table td {
+  margin: 0.5em 1em;
+}
+@media (min-width: 480px) {
+  .table th,
+  .table td {
+    padding: 1em !important;
   }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
+}
+.table th,
+.table td:before {
+  color: #dd5;
 }
