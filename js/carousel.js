@@ -1,16 +1,14 @@
 // for carousel section
 
-let mainPosts = document.querySelectorAll(".main-post");
-let posts = document.querySelectorAll(".post");
+const mainPosts = document.querySelectorAll(".main-post");
+const posts = document.querySelectorAll(".post");
 
 let i = 0;
 let postIndex = 0;
-let currentPost = posts[postIndex];
-let currentMainPost = mainPosts[postIndex];
+const currentPost = posts[postIndex];
+const currentMainPost = mainPosts[postIndex];
 
-let progressInterval = setInterval(progress, 70);
-
-function progress() {
+const progress = () => {
   if (i === 100) {
     i = -5;
     // reset progress bar
@@ -43,4 +41,5 @@ function progress() {
     currentMainPost.classList.add("main-post--active");
     currentMainPost.classList.remove("main-post--not-active");
   }
-}
+};
+const progressInterval = setInterval(progress, 70);
