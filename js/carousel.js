@@ -5,8 +5,8 @@ const posts = document.querySelectorAll(".post");
 
 let i = 0;
 let postIndex = 0;
-const currentPost = posts[postIndex];
-const currentMainPost = mainPosts[postIndex];
+let currentPost = posts[postIndex];
+let currentMainPost = mainPosts[postIndex];
 
 const progress = () => {
   if (i === 100) {

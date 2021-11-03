@@ -55,8 +55,8 @@
             </li>
             <li>
               <a href="#categories" class="desktop-link">Categories</a>
-              <input type="checkbox" id="show-services" />
-              <label for="show-services">Categories</label>
+              <input type="checkbox" id="show-categories" />
+              <label for="show-categories">Categories</label>
               <ul>
                 <li><a href="#categories">Business</a></li>
                 <li><a href="#categories">Entertainment</a></li>
@@ -79,7 +79,7 @@
         <label for="show-search" class="search-icon"
           ><i class="fas fa-search"></i
         ></label>
-        <form action="#" class="search-box">
+        <form onsubmit="()=>e.preventDefault()" class="search-box">
           <input
             type="text"
             placeholder="Type Something to Search..."

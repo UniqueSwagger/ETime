@@ -168,7 +168,7 @@ nav .content .links {
 .content .links ul ul {
   position: absolute;
   top: 0;
-  right: calc(-100% + 8px);
+  right: -115px;
 }
 .content .links ul li {
   position: relative;
@@ -177,7 +177,7 @@ nav .content .links {
   top: 0;
 }
 
-/*----------------------------Responsive code start-----------------------*/
+/*----------------------------Responsive nav code start-----------------------*/
 @media screen and (max-width: 1250px) {
   .wrapper nav {
     max-width: 100%;
@@ -252,7 +252,7 @@ nav .content .links {
     max-height: 0px;
   }
   .content .links #show-movies:checked ~ ul,
-  .content .links #show-services:checked ~ ul,
+  .content .links #show-categories:checked ~ ul,
   .content .links #show-items:checked ~ ul {
     max-height: 100vh;
   }
@@ -266,7 +266,7 @@ nav .content .links {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 768px) {
   .wrapper nav {
     padding: 0 10px;
   }
@@ -282,6 +282,23 @@ nav .content .links {
   }
   .wrapper .search-box input {
     padding-right: 30px;
+  }
+  .content .links li > ul {
+    top: 70px;
+    opacity: 1;
+    display: block;
+    z-index: 5;
+    transition: all 0.3s ease;
+  }
+  .content .links #show-movies:checked + label ~ ul,
+  .content .links #show-categories:checked + label ~ ul,
+  .content .links #show-items:checked + label ~ ul {
+    display: block;
+  }
+  .content .links #show-movies:not(:checked) + label ~ ul,
+  .content .links #show-categories:not(:checked) + label ~ ul,
+  .content .links #show-items:not(:checked) + label ~ ul {
+    display: none;
   }
 }
 /*------------------------------------carousel style start---------------------------*/
